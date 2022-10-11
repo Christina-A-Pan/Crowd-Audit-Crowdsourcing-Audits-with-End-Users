@@ -2,12 +2,12 @@
 
 Crowd-Audit facilitates crowdsourced audits done by end (lay) users, which enables faster and more thorough audits. While Crowd-Audit’s current implementation currently focuses on the Perspective API, it can be extended to other open source algorithms.
 
-Problem:
+## Problem:
 Audits take a long time to conduct, which means that many AI systems in need of auditing are not audited. For instance, an algorithmic auditing consultancy executive stated that audits can take six to nine months to complete. Much of this time is spent on testing hypotheses and identifying areas for improvement.
 
 In addition, audits today are done by experts. Given experts' limited time and small number, audits are limited by the cases the experts decide to test.
 
-Solution:
+## Solution:
 Crowd-Audit addresses both problems by introducing a tool that will make audits faster to conduct and more thorough. It features a web-application that collects multiple end (lay) users’ audits of a system. Crowd-Audit also has an aggregator that condenses the multitude of user reports into a single report that enables experts to see areas of improvement.
 
 While both the web-application and aggregator are currently focused on Perspective API, it can be modified to extend to other open source AI applications. (Perspective API estimates a comment’s toxicity and is used in content moderation on social media, such as in the New York Times.) This extension is particularly easy for other NLP-based algorithms. 
