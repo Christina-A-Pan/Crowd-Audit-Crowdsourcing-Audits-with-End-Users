@@ -19,7 +19,7 @@ The web-application collects multiple users’ audits by having end users:
 4) submit pertinent examples along with a summary of thoughts about these examples (i.e., a user report).  
 
 
-This web-application is **Indielabel**, "an interactive web application for end-user auditing" that was introduced in Lam et. al's **End-User Audits: A System Empowering Communities to Lead Large-Scale Investigations of Harmful Algorithmic Behavior** paper. You can see the original repo at: https://github.com/StanfordHCI/indie-label.
+This web-application is **Indielabel**, "an interactive web application for end-user auditing" that was introduced in Lam et. al's **End-User Audits: A System Empowering Communities to Lead Large-Scale Investigations of Harmful Algorithmic Behavior** paper. You can see the original repo at: https://github.com/StanfordHCI/indie-label. (Anticipated next steps would be to make the implementation more modular/generic so that it can be easily extended to other open source algorithms.)
 
 The aggregator automatically filters the wheat from the chaff by condensing users’ reports into a single one. This report includes user summaries/suggestions as well as commonly submitted examples. To filter out bad actors, the aggregator only accepts data from users who have submitted examples that have been brought up in other users’ reports. In addition, the report shows the most important information for each of the examples. Experts have the option to read individual users’ reports by going to the log of individual user reports.
 
