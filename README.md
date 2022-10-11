@@ -1,15 +1,29 @@
-# IndieLabel
-**End-User Audits: A System Empowering Communities to Lead Large-Scale Investigations of Harmful Algorithmic Behavior**
+# Crowd-Audit: Crowdsourcing Audits with End Users
 
-Michelle S. Lam, Mitchell L. Gordon, Danaë Metaxa, Jeffrey T. Hancock, James A. Landay, Michael S. Bernstein (CSCW 2022)
+Crowd-Audit facilitates crowdsourced audits done by end (lay) users, which enables faster and more thorough audits. While Crowd-Audit’s current implementation currently focuses on the Perspective API, it can be extended to other open source algorithms.
 
-This repo shares our implementation of **IndieLabel**—an interactive web application for end-user auditing that we introduced in our CSCW paper.
+Problem:
+Audits take a long time to conduct, which means that many AI systems in need of auditing are not audited. For instance, an algorithmic auditing consultancy executive stated that audits can take six to nine months to complete. Much of this time is spent on testing hypotheses and identifying areas for improvement.
 
-> Because algorithm audits are conducted by technical experts, audits are necessarily limited to the hypotheses that experts think to test. End users hold the promise to expand this purview, as they inhabit spaces and witness algorithmic impacts that auditors do not. In pursuit of this goal, we propose end-user audits—system-scale audits led by non-technical users—and present an approach that scaffolds end users in hypothesis generation, evidence identification, and results communication. Today, performing a system-scale audit requires substantial user effort to label thousands of system outputs, so we introduce a collaborative filtering technique that leverages the algorithmic system's own disaggregated training data to project from a small number of end user labels onto the full test set. Our end-user auditing tool, IndieLabel, employs these projected labels so that users can rapidly explore where their opinions diverge from the algorithmic system's outputs. By highlighting topic areas where the system is under-performing for the user and surfacing sets of likely error cases, the tool guides the user in authoring an audit report. In an evaluation of end-user audits on a popular comment toxicity model with 17 non-technical participants, participants both replicated issues that formal audits had previously identified and also raised previously underreported issues such as under-flagging on veiled forms of hate that perpetuate stigma and over-flagging of slurs that have been reclaimed by marginalized communities.
+In addition, audits today are done by experts. Given experts' limited time and small number, audits are limited by the cases the experts decide to test.
+
+Solution:
+Crowd-Audit addresses both problems by introducing a tool that will make audits faster to conduct and more thorough. It features a web-application that collects multiple end (lay) users’ audits of a system. Crowd-Audit also has an aggregator that condenses the multitude of user reports into a single report that enables experts to see areas of improvement.
+
+While both the web-application and aggregator are currently focused on Perspective API, it can be modified to extend to other open source AI applications. (Perspective API estimates a comment’s toxicity and is used in content moderation on social media, such as in the New York Times.) This extension is particularly easy for other NLP-based algorithms. 
+
+The web-application collects multiple users’ audits by having end users:
+1) label examples from the Perspective API dataset,
+2) extend end users’ expectations by training a personalized model predicting on previously unseen models,
+3) examine examples in which the end users’ model estimates a toxicity score wildly differs from the perspective API,
+4) submit pertinent examples along with a summary of thoughts about these examples (i.e., a user report).
+This web-application is **Indielabel**, "an interactive web application for end-user auditing" that was introduced in Lam et. al's **End-User Audits: A System Empowering Communities to Lead Large-Scale Investigations of Harmful Algorithmic Behavior** paper. You can see the original repo at: https://github.com/StanfordHCI/indie-label.
+
+The aggregator automatically filters the wheat from the chaff by condensing users’ reports into a single one. This report includes user summaries/suggestions as well as commonly submitted examples. To filter out bad actors, the aggregator only accepts data from users who have submitted examples that have been brought up in other users’ reports. In addition, the report shows the most important information for each of the examples. Experts have the option to read individual users’ reports by going to the log of individual user reports.
 
 ---
 
-## Installation / Setup
+## IndieLabel Installation / Setup
 - Activate your virtual environment (tested with Python 3.8).
 - Install requirements:
     ```
@@ -31,7 +45,7 @@ This repo shares our implementation of **IndieLabel**—an interactive web appli
 
 - You can now visit `localhost:5001` to view the IndieLabel app!
 
-## Main paths
+## IndieLabel: Main paths
 Here's a summary of the relevant pages used for each participant in our study. For easier setup and navigation, we added URL parameters for the different labeling and auditing modes used in the study.
 - Participant's page: `localhost:5001/?user=<USER_NAME>`
 - Labeling task pages:
@@ -43,7 +57,7 @@ Here's a summary of the relevant pages used for each participant in our study. F
     - Fixed audit, group-based model: `localhost:5001/?user=<USER_NAME>&scaffold=personal_group`
     - Free-form audit, end-user model: `localhost:5001/?user=<USER_NAME>&scaffold=prompts` 
 
-## Setting up a new model
+## IndieLabel: Setting up a new model
 - Set up your username and navigate to the **Labeling** page 
     - Option A: Using a direct URL parameter
         - Go to `localhost:5001/?user=<USER_NAME>&tab=labeling&label_mode=0`, where in place of `<USER_NAME>`, you've entered your desired username
