@@ -17,6 +17,8 @@ The web-application collects multiple users’ audits by having end users:
 2) extend end users’ expectations by training a personalized model predicting on previously unseen models,
 3) examine examples in which the end users’ model estimates a toxicity score wildly differs from the perspective API,
 4) submit pertinent examples along with a summary of thoughts about these examples (i.e., a user report).  
+
+
 This web-application is **Indielabel**, "an interactive web application for end-user auditing" that was introduced in Lam et. al's **End-User Audits: A System Empowering Communities to Lead Large-Scale Investigations of Harmful Algorithmic Behavior** paper. You can see the original repo at: https://github.com/StanfordHCI/indie-label.
 
 The aggregator automatically filters the wheat from the chaff by condensing users’ reports into a single one. This report includes user summaries/suggestions as well as commonly submitted examples. To filter out bad actors, the aggregator only accepts data from users who have submitted examples that have been brought up in other users’ reports. In addition, the report shows the most important information for each of the examples. Experts have the option to read individual users’ reports by going to the log of individual user reports.
