@@ -24,7 +24,7 @@ This web-application is **Indielabel**, "an interactive web application for end-
 The aggregator automatically filters the wheat from the chaff by condensing users’ reports into a single one. This report includes user summaries/suggestions as well as commonly submitted examples. To filter out bad actors, the aggregator only accepts data from users who have submitted examples that have been brought up in other users’ reports. In addition, the report shows the most important information for each of the examples. Experts have the option to read individual users’ reports by going to the log of individual user reports.
 
 ---
-# IndieLabel
+# IndieLabel (i.e., the Web Application)
 
 ## IndieLabel Installation / Setup
 - Activate your virtual environment (tested with Python 3.8).
