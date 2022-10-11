@@ -86,4 +86,4 @@ Make sure to follow the instructions/setup in IndieLabel. The aggregator assumes
     ```
     $ python aggregateUserReports.py
     ```
-The report will appear in the aggregated_user_reports.txt in the main directory.
+The report will appear in the aggregated_user_reports.txt file in the main directory.
